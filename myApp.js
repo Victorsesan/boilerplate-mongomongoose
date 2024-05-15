@@ -1,7 +1,14 @@
 require('dotenv').config();
 
+const dotenv = require('dotenv');
+dotenv.config({path:'sample.env'});
+//#1
+//Setting up mongoose
 
+let mongoose = require('mongoose')
 let Person;
+
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
